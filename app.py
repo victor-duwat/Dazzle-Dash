@@ -32,19 +32,22 @@ fig2.update_traces(marker=dict(opacity=0.6))  # Modifier la transparence des poi
 # Initialiser l'application Dash
 app = Dash()
 
-# Ajouter les deux graphiques dans le layout de Dash (en les plaçant sous forme de colonnes)
+# Ajouter les deux graphiques dans le layout de Dash
 app.layout = html.Div([
-    html.H1("Life Expectancy and BMI Dashboard"),
+    html.H1("Life Expectancy Data Dashboard"),
     
-    # Premier graphique (Life Expectancy et BMI)
+    # Conteneur pour centrer les graphiques
     html.Div([
-        dcc.Graph(id='life-expectancy-bmi-graph', figure=fig1)
-    ], style={'width': '48%', 'display': 'inline-block'}),
-    
-    # Deuxième graphique (Régression entre Life Expectancy et Adult Mortality)
-    html.Div([
-        dcc.Graph(id='life-expectancy-mortality-graph', figure=fig2)
-    ], style={'width': '48%', 'display': 'inline-block', 'float': 'right'})
+        # Premier graphique (Life Expectancy et BMI)
+        html.Div([
+            dcc.Graph(id='life-expectancy-bmi-graph', figure=fig1)
+        ], style={'width': '80%'}),
+        
+        # Deuxième graphique (Régression entre Life Expectancy et Adult Mortality)
+        html.Div([
+            dcc.Graph(id='life-expectancy-mortality-graph', figure=fig2)
+        ], style={'width': '80%'})
+    ], style={'display': 'flex', 'justify-content': 'center', 'flex-direction': 'column', 'align-items': 'center'})
 ])
 
 if __name__ == '__main__':
