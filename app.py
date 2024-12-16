@@ -3,9 +3,9 @@ import pandas as pd
 import plotly.express as px
 
 # Charger les données
-df = pd.read_csv('LifeExpectancyData.csv')
-df_life_expectancy_bmi = pd.read_csv('life_expectancy_bmi.csv')
-df_thinness_schooling = pd.read_csv('Thinness _1-19_years_schooling.csv')
+df = pd.read_csv('csv/LifeExpectancyData.csv')
+df_life_expectancy_bmi = pd.read_csv('csv/life_expectancy_bmi.csv')
+df_thinness_schooling = pd.read_csv('csv/Thinness _1-19_years_schooling.csv')
 
 # Créer le graphique avec Plotly Express
 fig1 = px.line(
